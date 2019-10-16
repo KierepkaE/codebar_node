@@ -10,10 +10,13 @@ app.get('/', (request, response) => {
   response.sendFile(__dirname + '/index.html');
 });
 app.post('/tasks', function (req, res) {
-  console.log(req.body);
-  fs.writeFileSync("b.json", req.params);
-  res.send('add a NEW TASK');
+  const task = req.body.task;
+  fs.appendFileSync("db.json", task + "," + '\n');
+  res.redirect('/list');
 })
 
+app.get('/list', (request, response) => {
+  response.sendFile(__dirname + '/db.json');
+});
 
 app.listen(process.env.PORT || 3000);
