@@ -28,7 +28,7 @@ app.post('/tasks', function (req, res) {
 })
 
 app.get('/list', (request, response) => {
-  response.sendFile(__dirname + '/db.json');
+  response.end(dataJSON);
 });
 
 app.listen(process.env.PORT || 3000);
