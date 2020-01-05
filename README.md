@@ -1,7 +1,7 @@
 # codebar_node
 
 
-- Figuring out node basics.
+> Figuring out node basics.
 
 #### How to use?
 
